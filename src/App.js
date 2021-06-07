@@ -1,12 +1,33 @@
-import AspRatio from './section/03-Layout/01-AspectRatio/AspRatio'
-import Bx from './section/03-Layout/02-Box/Bx'
-
-import { ChakraProvider } from "@chakra-ui/react"
+import {
+  ChakraProvider,
+  Select,
+  Slider,
+  SliderTrack,
+  SliderFilledTrack,
+  SliderThumb,
+  Box,
+} from '@chakra-ui/react';
+import { PhoneIcon, AddIcon, WarningIcon, SearchIcon } from '@chakra-ui/icons';
+import React from 'react';
+import bernie from './images/Bernie-1.jpg';
 
 function App() {
   return (
     <ChakraProvider>
-      <Bx />
+      <Box height="100px" />
+      <Slider
+        aria-label="slider-ex-1"
+        defaultValue={30}
+        step={5}
+        min={0}
+        max={120}
+        //onChangeEnd={(value) => alert(value)}
+      >
+        <SliderTrack>
+          <SliderFilledTrack />
+        </SliderTrack>
+        <SliderThumb />
+      </Slider>
     </ChakraProvider>
   );
 }
